@@ -14,6 +14,7 @@ public class Main {
         ImageServerImpl port = service.getImageServerImplPort(new MTOMFeature());
         byte[] image = port.downloadImage("mona-lisa.jpg");
 
+
         JFrame frame = new JFrame();
         frame.setSize(300, 300);
         JLabel label = new JLabel(new ImageIcon(image));
