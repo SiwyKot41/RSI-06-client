@@ -28,21 +28,6 @@ public interface ImageServerImpl {
      * 
      * @param arg0
      * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "echo", targetNamespace = "http://rsi.fr.org/", className = "org.fr.rsi.Echo")
-    @ResponseWrapper(localName = "echoResponse", targetNamespace = "http://rsi.fr.org/", className = "org.fr.rsi.EchoResponse")
-    @Action(input = "http://rsi.fr.org/ImageServerImpl/echoRequest", output = "http://rsi.fr.org/ImageServerImpl/echoResponse")
-    public String echo(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
      *     returns byte[]
      */
     @WebMethod
@@ -51,6 +36,21 @@ public interface ImageServerImpl {
     @ResponseWrapper(localName = "downloadImageResponse", targetNamespace = "http://rsi.fr.org/", className = "org.fr.rsi.DownloadImageResponse")
     @Action(input = "http://rsi.fr.org/ImageServerImpl/downloadImageRequest", output = "http://rsi.fr.org/ImageServerImpl/downloadImageResponse")
     public byte[] downloadImage(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "echo", targetNamespace = "http://rsi.fr.org/", className = "org.fr.rsi.Echo")
+    @ResponseWrapper(localName = "echoResponse", targetNamespace = "http://rsi.fr.org/", className = "org.fr.rsi.EchoResponse")
+    @Action(input = "http://rsi.fr.org/ImageServerImpl/echoRequest", output = "http://rsi.fr.org/ImageServerImpl/echoResponse")
+    public String echo(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
